@@ -23,12 +23,7 @@ window.onload = () =>{
             if( spanList[i] != undefined && event.key === spanList[i].textContent){
                spanList[i].classList.add('bounce-it');
                 
-                    //LIttle change has been made due to git 
-                    //This is second commit;
-                    //This is third + second COmmit;
-                    console.log('this is console log');
-                    console.log('Git is amazing and owsume');
-                
+                    // this is development branch;
                     syncWait();
 //                setTimeout(()=>{
                     removedNodes[index] = wrapper.removeChild(spanList[i]);
