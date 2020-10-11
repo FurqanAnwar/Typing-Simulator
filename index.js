@@ -26,7 +26,7 @@ window.onload = () =>{
                     //LIttle change has been made due to git 
                     //This is second commit;
                     //This is third + second COmmit;
-                
+                    console.log('this is console log');
                     console.log('Git is amazing and owsume');
                 
                     syncWait();
