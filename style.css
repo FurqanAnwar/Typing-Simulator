@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+hmtl {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  height: 100vh;
+  background-color: #f6f6f7;
+  font-size: 2rem;
+  font-family: "Roboto Mono", monospace;
+  color: black; }
+
+.bounce-it {
+  position: absolute;
+  z-index: 999999;
+  animation: bounce 0.9s ease-in-out forwards; }
+
+.container {
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.12), 0 9px 24px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe; }
+
+.wrapper {
+  height: 5.2rem;
+  width: 35rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.8rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 10; }
+  .wrapper__text-container {
+    margin-left: 0.5rem; }
+    .wrapper__text-container span {
+      font-size: 1.6rem;
+      position: relative; }
+
+.cursor::before {
+  content: "|";
+  color: transparent;
+  display: inline-block;
+  width: 3px;
+  background-color: #777575;
+  animation: blinking 1s linear infinite;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+.newCursor::after {
+  content: "|";
+  color: transparent;
+  display: inline-block;
+  width: 3px;
+  background-color: #777575;
+  animation: blinking 1s linear infinite;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.shake {
+  animation: shake-it 0.8s ease-in-out; }
+
+.is-wrong {
+  color: red; }
+
+@keyframes blinking {
+  0% {
+    opacity: 1; }
+  20% {
+    opacity: 0.7; }
+  40% {
+    opacity: 0.4; }
+  60% {
+    opacity: 0.1; }
+  80% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+
+@keyframes shake-it {
+  0% {
+    transform: rotate(0); }
+  30% {
+    transform: rotate(20deg) scale(1.5); }
+  60% {
+    transform: rotate(-20deg) scale(1); }
+  90% {
+    transform: rotate(-20deg) scale(1.5); }
+  100% {
+    transform: rotate(0) scale(1); } }
+
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0); }
+  25% {
+    transform: translate(-200px, -50px) rotate3d(1, 1, 1, 50deg); }
+  50% {
+    transform: translate(-230px, 0) rotate3d(0, 0, 1, -50deg); }
+  100% {
+    transform: translate(-250px, 550px); } }
