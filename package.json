@@ -1,0 +1,16 @@
+{
+  "name": "Typing_Test",
+  "version": "1",
+  "description": "A typing test module where you can see your typing speed and the animation that plays out when your letter or word is matched",
+  "main": "index.js",
+  "author": "Furqan Anwar",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server",
+    "compile:sass": "node-sass ./style.scss  ./style.css -w"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^5.0.0"
+  }
+}

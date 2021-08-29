@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <title>Document</title>
 </head>
+
 <body>
-<!--    <span class="bounce-it">bounce</span>-->
- 
+  <!--    <span class="bounce-it">bounce</span>-->
+  <!-- Alert !! Don't mess up with index.html file elements if you did it will 
+    generate extra space between each element and your index.js won't work the 
+    way you want
+  it to work
+  For Example: 
+    You decide to create space between elements lik
+    before: <div><span></span><span></span></div> and converted it to this
+    after: <div>
+            <span> </span>
+            <span> </span>
+           </div>
+          Doing this will generate space between the span and div elements and with
+          the space index.js will trouble to produce desired result
+-->
   
-   <div class="container">
-        
-       <div class="wrapper">
-           <span class="text-container">y</span><span class="text-container">e</span><span class="text-container">l</span><span class="text-container">l</span><span class="text-container">w</span><span class="text-container">o</span><span class="text-container">r</span><span class="text-container">k</span>
-       </div>
-   </div>
-    <script src="index.js"></script>
+  <div class="container">
+    <div class="wrapper" tabindex="0">
+      <div class="wrapper__text-container"><span class="text">h</span><span class="text">e</span><span class="text">l</span><span class="text">l</span></div><div class="wrapper__text-container"><span class="text">s</span><span class="text">p</span><span
+          class="text">e</span><span class="text">l</span></div><div class="wrapper__text-container"><span class="text">s</span><span class="text">p</span><span
+            class="text">o</span><span class="text">o</span><span class="text">n</span></div><div class="wrapper__text-container"><span class="text">f</span><span class="text">o</span><span
+              class="text">o</span><span class="text">d</span></div><div class="wrapper__text-container"><span class="text">h</span><span class="text">o</span><span
+                class="text">u</span><span class="text">s</span><span class="text">e</span></div><div class="wrapper__text-container"><span class="text">c</span><span class="text">o</span><span
+                  class="text">r</span><span class="text">n</span><span class="text">e</span><span class="text">r</span></div><div class="wrapper__text-container"><span class="text">w</span><span class="text">o</span><span
+                    class="text">r</span><span class="text">k</span><span class="text">i</span><span class="text">n</span><span class="text">g</span></div><div class="wrapper__text-container"><span class="text">b</span><span class="text">o</span><span
+                      class="text">x</span><span class="text">e</span><span class="text">r</span></div>
+      <!-- <span class="wrapper__text-container">yes</span
+        ><span class="wrapper__text-container">wait</span
+        ><span class="wrapper__text-container">corner</span
+        ><span class="wrapper__text-container">lost</span
+        ><span class="wrapper__text-container">work</span
+        ><span class="wrapper__text-container">outh</span
+        ><span class="wrapper__text-container">perfect</span
+        ><span class="wrapper__text-container">boxer</span
+        ><span class="wrapper__text-container">kin</span> -->
+    </div>
+  </div>
+  <script src="index.js"></script>
 </body>
+
 </html>
