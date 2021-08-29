@@ -1,6 +1,3 @@
-// Next Task
-//1)Make sure animate does not work on caps lock and shif button because of Capital vs small letter issue.
-//2)Make UI structure of your application and upload it to codepen
 
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
@@ -40,12 +37,12 @@ document.addEventListener("click", (event) => {
 // Key down event
 
 wrapper.addEventListener("keydown", (event) => {
-  console.log(event.target);
+  
     if(event.target != undefined && spanList[i].textContent == event.key){
       
-    console.log(spanList[i]);
+    
     if(i === length){
-      console.log(length)
+      
       // remove the cursor from front of element
       spanList[i].classList.remove("cursor");
       // add the newly cursor after element
@@ -56,7 +53,7 @@ wrapper.addEventListener("keydown", (event) => {
     if((i < length)){
       
       spanList[i].classList.remove("cursor");
-      console.log("cursor is removed", spanList[i]);
+     
       ++i;
       console.log("cursor is moved to next element", spanList[i])
       spanList[i].classList.add("cursor");
@@ -65,7 +62,7 @@ wrapper.addEventListener("keydown", (event) => {
 
     if( event.which === 32  || event.keyCode === 32){
       if(i === length){
-        console.log("The val of i is equal to length", i === length);
+       
         
         //if true than push the whole span out using animation
         textContainersList[index].classList.add("bounce-it");
@@ -75,14 +72,14 @@ wrapper.addEventListener("keydown", (event) => {
         setTimeout(() => {
               removedNodes[index] = wrapper.removeChild(textContainersList[index]);
                 ++index;
-                console.log("index after increment", index)
+                
             
           }, 800);
         setTimeout(() =>{
           console.log(removedNodes)
           if (textContainersList.length != 1 && textContainersList[index] != undefined) {
                  
-                  console.log("true");
+                  
                   i = 0;
                   updateElement(index,i);
                 }
