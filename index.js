@@ -23,16 +23,15 @@ window.onload = () => {
 
 //click event
 document.addEventListener("click", (event) => {
-  let elemClass, target, classPropsArr, checkClassMatches;
+  let  target, classPropsArr;
   target = event.target;
   
   checkPropertyExists = target.attributes.hasOwnProperty("class");
   classPropsArr = ["wrapper", "wrapper__text-container", "text"];
 
-  if (checkPropertyExists) {
-    console.log("Check if there is classProps",classPropsArr.includes(target.classList[0]))
-    
-    if (!classPropsArr.includes(target.classList[0])) wrapper.blur();
+  if (checkPropertyExists && !classPropsArr.includes(target.classList[0])) {
+      // remove focus of the wrapper
+      wrapper.blur();
   }
 
 });
@@ -63,32 +62,31 @@ wrapper.addEventListener("keydown", (event) => {
      
     } }
 
-    if( event.which === 32  || event.keyCode === 32){
-      if(i === length){
-        console.log("The val of i is equal to length", i === length);
+    if( event.which === 32  || event.keyCode === 32 && i === length){
+     
         
         //if true than push the whole span out using animation
         textContainersList[index].classList.add("bounce-it");
+
         // textContainersList[index].classList.remove("cursor");
         spanList[length].classList.remove("newCursor");
         
         setTimeout(() => {
               removedNodes[index] = wrapper.removeChild(textContainersList[index]);
                 ++index;
-                console.log("index after increment", index)
             
           }, 800);
+          
         setTimeout(() =>{
           console.log(removedNodes)
           if (textContainersList.length != 1 && textContainersList[index] != undefined) {
                  
-                  console.log("true");
                   i = 0;
                   updateElement(index,i);
                 }
         },800)
         
-      }
+      
       
     }
   // Else part comes here if key doesn't matches the key pressed by user
