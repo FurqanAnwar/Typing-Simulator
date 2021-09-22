@@ -27,7 +27,7 @@ document.addEventListener("click", (event) => {
   classPropsArr = ["wrapper", "wrapper__text-container", "text"];
 
   if (checkPropertyExists) {
-    console.log("Check if there is classProps",classPropsArr.includes(target.classList[0]))
+   
     
     if (!classPropsArr.includes(target.classList[0])) wrapper.blur();
   }
@@ -76,7 +76,7 @@ wrapper.addEventListener("keydown", (event) => {
             
           }, 800);
         setTimeout(() =>{
-          console.log(removedNodes)
+        
           if (textContainersList.length != 1 && textContainersList[index] != undefined) {
                  
                   
@@ -95,7 +95,7 @@ wrapper.addEventListener("keydown", (event) => {
 const updateElement = (index, i) =>{
   // Change the spanList
   spanList = textContainersList[index].childNodes;
-  console.log(spanList)
+ 
   // Change the length variable
   length= spanList.length - 1;
   // Add cursor to first element of span
@@ -116,7 +116,7 @@ const appendElement = (element) => {
   element.appendChild(node);
   node.innerHTML = `${rand[Math.floor(Math.random() * 25)]}`;
   node.classList.add("wrapper__text-container");
-  console.log("this node is appended", node);
+ 
 };
 
 // Below is old code commented only for reference in case i need something
