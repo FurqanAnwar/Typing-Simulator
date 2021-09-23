@@ -1,22 +1,17 @@
-
-// Next Task
-//1)Make sure animate does not work on caps lock and shif button because of Capital vs small letter issue.
-//2)Make UI structure of your application and upload it to codepen
-
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
 const textContainersList = document.querySelectorAll(".wrapper__text-container");
 let spanList;
-let i = 0;
+let currentSpan = 0;
 let index = 0;
 let length;
 let removedNodes = [];
 
-console.log(textContainersList[0].childNodes);
+
 window.onload = () => {
   
   wrapper.focus();
-  updateElement(index,i);
+  updateElement(index,currentSpan);
  
 };
 
@@ -40,30 +35,30 @@ document.addEventListener("click", (event) => {
 // Key down event
 
 wrapper.addEventListener("keydown", (event) => {
-  console.log(event.target);
-    if(event.target != undefined && spanList[i].textContent == event.key){
+ 
+    if(event.target != undefined && spanList[currentSpan].textContent == event.key){
       
-    console.log(spanList[i]);
-    if(i === length){
-      console.log(length)
+    
+    if(currentSpan === length){
+     
       // remove the cursor from front of element
-      spanList[i].classList.remove("cursor");
+      spanList[currentSpan].classList.remove("cursor");
       // add the newly cursor after element
-      spanList[i].classList.add("newCursor");
+      spanList[currentSpan].classList.add("newCursor");
     }
   
 
-    if((i < length)){
+    if((currentSpan < length)){
       
-      spanList[i].classList.remove("cursor");
-      console.log("cursor is removed", spanList[i]);
-      ++i;
-      console.log("cursor is moved to next element", spanList[i])
-      spanList[i].classList.add("cursor");
+      spanList[currentSpan].classList.remove("cursor");
+      
+      ++currentSpan;
+     
+      spanList[currentSpan].classList.add("cursor");
      
     } }
 
-    if( event.which === 32  || event.keyCode === 32 && i === length){
+    if( event.which === 32  || event.keyCode === 32 && currentSpan === length){
      
         
         //if true than push the whole span out using animation
@@ -79,11 +74,11 @@ wrapper.addEventListener("keydown", (event) => {
           }, 800);
           
         setTimeout(() =>{
-          console.log(removedNodes)
+          
           if (textContainersList.length != 1 && textContainersList[index] != undefined) {
                  
-                  i = 0;
-                  updateElement(index,i);
+            currentSpan = 0;
+                  updateElement(index,currentSpan);
                 }
         },800)
         
@@ -97,11 +92,11 @@ wrapper.addEventListener("keydown", (event) => {
 const updateElement = (index, i) =>{
   // Change the spanList
   spanList = textContainersList[index].childNodes;
-  console.log(spanList)
+  
   // Change the length variable
-  length= spanList.length - 1;
+  length = spanList.length - 1;
   // Add cursor to first element of span
-  spanList[i].classList.add("cursor");
+  spanList[currentSpan].classList.add("cursor");
 }
 
 const appendElement = (element) => {
@@ -118,7 +113,7 @@ const appendElement = (element) => {
   element.appendChild(node);
   node.innerHTML = `${rand[Math.floor(Math.random() * 25)]}`;
   node.classList.add("wrapper__text-container");
-  console.log("this node is appended", node);
+  
 };
 
 // Below is old code commented only for reference in case i need something
