@@ -1,11 +1,20 @@
+/**
+ * Appending element is working perfectly but textContainersList is not updating
+ * 
+ */
+
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
-const textContainersList = document.querySelectorAll(".wrapper__text-container");
+let textContainerList = wrapper.children;
+// let textContainersList = document.querySelectorAll(".wrapper__text-container");
+let list;
+let newList;
 let spanList;
 let currentSpan = 0;
 let index = 0;
 let length;
 let removedNodes = [];
+
 
 
 window.onload = () => {
@@ -38,6 +47,8 @@ wrapper.addEventListener("keydown", (event) => {
  
     if(event.target != undefined && spanList[currentSpan].textContent == event.key){
       
+      
+      
     
     if(currentSpan === length){
      
@@ -48,7 +59,7 @@ wrapper.addEventListener("keydown", (event) => {
     }
   
 
-    if((currentSpan < length)){
+    if(currentSpan < length){
       
       spanList[currentSpan].classList.remove("cursor");
       
@@ -58,27 +69,32 @@ wrapper.addEventListener("keydown", (event) => {
      
     } }
 
-    if( event.which === 32  || event.keyCode === 32 && currentSpan === length){
+    if( (event.which === 32  || event.keyCode === 32) && currentSpan === length){
      
-        
         //if true than push the whole span out using animation
-        textContainersList[index].classList.add("bounce-it");
+      
+        textContainerList[index].classList.add("bounce-it");
 
-        // textContainersList[index].classList.remove("cursor");
         spanList[length].classList.remove("newCursor");
         
-        setTimeout(() => {
-              removedNodes[index] = wrapper.removeChild(textContainersList[index]);
-                ++index;
-            
-          }, 800);
+      setTimeout(() => {
           
+          removedNodes[index] = wrapper.removeChild(textContainerList[index]);
+        
+        }, 800);
+  
+     
         setTimeout(() =>{
           
-          if (textContainersList.length != 1 && textContainersList[index] != undefined) {
+          if (textContainerList.length != 1 && textContainerList[index] != undefined) {
                  
             currentSpan = 0;
-                  updateElement(index,currentSpan);
+            // append new child into wrapper
+            
+            // Update element
+            updateElement(index, currentSpan);
+            // append element
+            let element = appendElement(wrapper);
                 }
         },800)
         
@@ -89,18 +105,20 @@ wrapper.addEventListener("keydown", (event) => {
   
 });
 
-const updateElement = (index, i) =>{
+const updateElement = (index, currentSpan) =>{
   // Change the spanList
-  spanList = textContainersList[index].childNodes;
+  spanList = textContainerList[index].childNodes;
   
   // Change the length variable
   length = spanList.length - 1;
   // Add cursor to first element of span
   spanList[currentSpan].classList.add("cursor");
 }
-
+// I'll refactor this appendElement function later
 const appendElement = (element) => {
-  const rand = [
+  let currentIndex = 0;
+  
+  const textList = [
     "where","fill","close","desert","elite",
     "fanbase","ghost","hilton","injector",
     "jack","kill","lost","month","not",
@@ -109,34 +127,33 @@ const appendElement = (element) => {
     "xponent","yes","zoo",
   ];
 
-  const node = document.createElement("span");
-  element.appendChild(node);
-  node.innerHTML = `${rand[Math.floor(Math.random() * 25)]}`;
-  node.classList.add("wrapper__text-container");
-  
-};
+  const div = document.createElement("div");
+  div.classList.add("wrapper__text-container");
 
-// Below is old code commented only for reference in case i need something
-// Change the value of length to next element items length
-        // Set the value of i = 0 again
-    //     spanList[i].classList.add("bounce-it");
-    //     spanList[i].classList.remove("cursor");
-    //     setTimeout(() => {
-    //     removedNodes[index] = wrapper.removeChild(spanList[i]);
-    //       ++index;
-    //   appendElement(wrapper);
-    // }, 800);
-//     if (spanList.length != 1 && spanList[i + 1] != undefined) {
-//       spanList[i + 1].classList.add("cursor");
-//     }
-//   } else {
-//     spanList[i].classList.remove("cursor");
-//     spanList[i].classList.add("is-wrong");
-//     spanList[i].classList.toggle("shake");
-//     setTimeout(() => {
-//       spanList[i].classList.add("cursor");
-//       spanList[i].classList.toggle("is-wrong");
-//       spanList[i].classList.toggle("shake");
-//       console.log("Waiting For Animation To Occur");
-//       console.log("Is class removed or not ", spanList[i]);
-//     }, 800);
+  const text = textList[Math.floor(Math.random() * 25)];
+  
+  do {
+    // Generate span nodes based on length of text
+    let span = document.createElement("span");
+
+    // Set the inner content of span to text's content based on index
+    span.textContent = text.charAt(currentIndex);
+
+    // Set text class on span
+    span.classList.add("text");
+
+    // Append span to div created earlier
+    div.appendChild(span)
+  
+    // Increment current index by one
+    currentIndex++;
+    
+  } while (currentIndex < text.length)
+
+
+  // Append the div inside given element
+  element.appendChild(div);
+  
+  return div;
+ 
+};
