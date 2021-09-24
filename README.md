@@ -2,6 +2,10 @@
 ### Overview
 Typing Simulator is a front end project which allows user to do typing. This is version 1 of typing simulator which is still in development process.
 
+# Live Preview (Till Now)
+~~~
+http://furqananwar.me/Typing-Simulator/
+~~~
 # Getting Started
 1. Clone the project
 ~~~
