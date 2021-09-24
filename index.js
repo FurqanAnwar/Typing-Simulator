@@ -98,8 +98,7 @@ wrapper.addEventListener("keydown", (event) => {
       
       
   }
-  console.log("Key didn't matched", event.key)
-  console.log("Current span element", spanList[currentSpan]);
+  
   // Else part comes here if key doesn't matches the key pressed by user
   /*
   FIXME:
