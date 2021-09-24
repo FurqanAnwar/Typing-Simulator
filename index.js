@@ -1,12 +1,8 @@
-/**
- * Appending element is working perfectly but textContainersList is not updating
- * 
- */
+
 
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
 let textContainerList = wrapper.children;
-// let textContainersList = document.querySelectorAll(".wrapper__text-container");
 let list;
 let newList;
 let spanList;
@@ -73,6 +69,7 @@ wrapper.addEventListener("keydown", (event) => {
      
         //if true than push the whole span out using animation
       
+
         textContainerList[index].classList.add("bounce-it");
 
         spanList[length].classList.remove("newCursor");
@@ -100,20 +97,31 @@ wrapper.addEventListener("keydown", (event) => {
         
       
       
-    }
+  }
+  console.log("Key didn't matched", event.key)
+  console.log("Current span element", spanList[currentSpan]);
   // Else part comes here if key doesn't matches the key pressed by user
-  
+  /*
+  FIXME:
+  */
+  spanList[currentSpan].classList.add("shake");
+  setTimeout(() => {
+    
+    spanList[currentSpan].classList.remove("shake");
+  },0)
 });
 
 const updateElement = (index, currentSpan) =>{
-  // Change the spanList
+  // Update the spanList
   spanList = textContainerList[index].childNodes;
   
-  // Change the length variable
+  // Update the length variable
   length = spanList.length - 1;
-  // Add cursor to first element of span
+
+  // Add cursor to first element of spanList
   spanList[currentSpan].classList.add("cursor");
 }
+
 // I'll refactor this appendElement function later
 const appendElement = (element) => {
   let currentIndex = 0;

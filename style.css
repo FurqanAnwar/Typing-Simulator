@@ -37,9 +37,9 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-left: 0.8rem;
-  overflow: hidden;
-  position: relative;
-  z-index: 10; }
+  overflow: hidden; }
+  .wrapper:focus {
+    outline: unset; }
   .wrapper__text-container {
     margin-left: 0.5rem; }
     .wrapper__text-container span {
