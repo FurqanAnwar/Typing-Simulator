@@ -71,19 +71,9 @@ body {
   
 }
 
-.cursor::before {
-  content: "|";
-  color: transparent;
-  display: inline-block;
-  width: 3px;
-  background-color: #777575;
-  animation: blinking 1s linear infinite;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 
-.newCursor::after {
+
+.newCursor::after,.cursor::before {
   content: "|";
   color: transparent;
   display: inline-block;

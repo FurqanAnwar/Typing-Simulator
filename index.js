@@ -105,7 +105,7 @@ wrapper.addEventListener("keydown", (event) => {
   /*
   FIXME:
   */
-  console.log("I'm callable in every case")
+ 
   // if (event.target != undefined && spanList[currentSpan].textContent !== event.key) {
   //   spanList[currentSpan].classList.add("shake");
   //   spanList[currentSpan].classList.add("is-wrong")
