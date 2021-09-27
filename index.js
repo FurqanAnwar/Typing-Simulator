@@ -63,7 +63,9 @@ wrapper.addEventListener("keydown", (event) => {
      
       spanList[currentSpan].classList.add("cursor");
      
-    } }
+      }
+      return;
+    }
 
     if( (event.which === 32  || event.keyCode === 32) && currentSpan === length){
      
@@ -96,18 +98,18 @@ wrapper.addEventListener("keydown", (event) => {
         },800)
         
       
-      
+      return
   }
   
   // Else part comes here if key doesn't matches the key pressed by user
   /*
   FIXME:
   */
-  spanList[currentSpan].classList.add("shake");
-  setTimeout(() => {
-    
-    spanList[currentSpan].classList.remove("shake");
-  },0)
+  console.log("I'm callable in every case")
+  // if (event.target != undefined && spanList[currentSpan].textContent !== event.key) {
+  //   spanList[currentSpan].classList.add("shake");
+  //   spanList[currentSpan].classList.add("is-wrong")
+  // }
 });
 
 const updateElement = (index, currentSpan) =>{
