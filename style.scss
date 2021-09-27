@@ -70,10 +70,8 @@ body {
 
   
 }
-
-
-
-.newCursor::after,.cursor::before {
+.cursor::before,
+.newCursor::after{
   content: "|";
   color: transparent;
   display: inline-block;
@@ -82,6 +80,13 @@ body {
   animation: blinking 1s linear infinite;
   position: absolute;
   bottom: 0;
+}
+.cursor::before {
+  left: 0;
+}
+
+.newCursor::after{
+
   right: 0;
 }
 
