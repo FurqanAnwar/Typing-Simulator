@@ -3,7 +3,9 @@
 Typing Simulator is a front end project which allows user to do typing. This is version 1 of typing simulator which is still in development process.
 # Instructions !
 ### General
-> Typing Simulator is not like other typing testers where you can write words more speedly, Typing Simulator uses pop up animation ( created by me ) which takes .8 sec to complete its animation, so cursor will be gone for that .8s which means user can't type as soon as he pop up the word from the stack. 
+``` 
+Typing Simulator is not like other typing testers where you can write words more speedly, Typing Simulator uses pop up animation ( created by me ) which takes 0.8 sec to complete its animation, so cursor will be gone for that .8s which means user can't type as soon as he pop up the word from the stack. 
+```
 
 ### For Focus 💫
 >By default focus will be on the container having words in it, when ever user click any where else on the screen the focus is lost (unset by default), so in order to regain focus click any where near text and start typing.
