@@ -101,15 +101,23 @@ wrapper.addEventListener("keydown", (event) => {
       return
   }
   
-  // Else part comes here if key doesn't matches the key pressed by user
-  /*
-  FIXME:
-  */
- 
-  // if (event.target != undefined && spanList[currentSpan].textContent !== event.key) {
-  //   spanList[currentSpan].classList.add("shake");
-  //   spanList[currentSpan].classList.add("is-wrong")
-  // }
+  
+  if (spanList[currentSpan].textContent !== event.key) {
+    
+  
+    
+    spanList[currentSpan].classList.remove("cursor");
+    spanList[currentSpan].classList.add("shake");
+    spanList[currentSpan].classList.add("is-wrong");
+
+    // Remove animation class after .8 sec delay
+    setTimeout(() => {
+      spanList[currentSpan].classList.remove("shake");
+      spanList[currentSpan].classList.remove("is-wrong");
+      spanList[currentSpan].classList.add("cursor");
+    }, 800)
+   
+  }
 });
 
 const updateElement = (index, currentSpan) =>{

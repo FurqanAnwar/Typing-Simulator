@@ -41,7 +41,8 @@ body {
   .wrapper:focus {
     outline: unset; }
   .wrapper__text-container {
-    margin-left: 0.5rem; }
+    margin-left: 0.5rem;
+    display: flex; }
     .wrapper__text-container span {
       font-size: 1.6rem;
       position: relative; }
@@ -55,7 +56,8 @@ body {
   background-color: #777575;
   animation: blinking 1s linear infinite;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  opacity: 1; }
 
 .cursor::before {
   left: 0; }
@@ -70,8 +72,6 @@ body {
   color: red; }
 
 @keyframes blinking {
-  0% {
-    opacity: 1; }
   20% {
     opacity: 0.7; }
   40% {
@@ -79,19 +79,17 @@ body {
   60% {
     opacity: 0.1; }
   80% {
-    opacity: 0.6; }
-  100% {
-    opacity: 1; } }
+    opacity: 0.6; } }
 
 @keyframes shake-it {
   0% {
     transform: rotate(0); }
   30% {
-    transform: rotate(20deg) scale(1.5); }
+    transform: rotate(20deg) scale(2.5); }
   60% {
     transform: rotate(-20deg) scale(1); }
   90% {
-    transform: rotate(-20deg) scale(1.5); }
+    transform: rotate(-20deg) scale(2.5); }
   100% {
     transform: rotate(0) scale(1); } }
 
