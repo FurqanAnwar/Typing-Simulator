@@ -122,7 +122,7 @@ wrapper.addEventListener("keydown", (event) => {
 
 const updateElement = (index, currentSpan) =>{
   // Update the spanList
-  spanList = textContainerList[index].childNodes;
+  spanList = textContainerList[index].children;
   
   // Update the length variable
   length = spanList.length - 1;
