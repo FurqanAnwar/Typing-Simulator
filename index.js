@@ -10,7 +10,7 @@ let currentSpan = 0;
 let index = 0;
 let length;
 let removedNodes = [];
-
+let pushWord = false;
 
 
 window.onload = () => {
@@ -53,6 +53,8 @@ wrapper.addEventListener("keydown", (event) => {
       spanList[currentSpan].classList.remove("cursor");
       // add the newly cursor after element
       spanList[currentSpan].classList.add("newCursor");
+      // set pushWord
+      pushWord = true;
     }
   
 
@@ -68,7 +70,7 @@ wrapper.addEventListener("keydown", (event) => {
       return;
     }
 
-    if( (event.which === 32  || event.keyCode === 32) && currentSpan === length){
+    if( (event.which === 32  || event.keyCode === 32) && pushWord){
      
         //if true than push the whole span out using animation
       
@@ -130,6 +132,9 @@ const updateElement = (index, currentSpan) =>{
 
   // Add cursor to first element of spanList
   spanList[currentSpan].classList.add("cursor");
+
+  // Reset pushWord value
+  pushWord = false;
 }
 
 // I'll refactor this appendElement function later
