@@ -42,6 +42,7 @@ document.addEventListener("click", (event) => {
 wrapper.addEventListener("keydown", (event) => {
  
     if(event.target != undefined && spanList[currentSpan].textContent == event.key){
+      spanList[currentSpan].classList.add("is-correct");
       
       
       
