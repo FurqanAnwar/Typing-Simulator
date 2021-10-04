@@ -4,7 +4,8 @@
 <h2 align="center"><img src="https://user-images.githubusercontent.com/37766405/135808975-44151faf-4e90-4ffe-9b70-b747250dcad1.PNG"  /></h2>
 
 # Overview
-Typing Simulator is a front end project which allows user to do typing. This is version 1 of typing simulator which is still in development process.
+Typing Simulator is a front end project which allows user to do typing, but there is a catch user won't be able to type more swiftly as there will be a delay of 0.8s when ever user pushes the right word by pressing space bar.
+
 
 # Instructions !
 ### General
