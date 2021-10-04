@@ -31,3 +31,6 @@ yarn install
 yarn start (For live-server to run)
 yarn compile:sass (For compiling sass code into css file)
 ~~~
+
+# Want to contribute :question:
+For more information visit [CONTRIBUTION.md](https://github.com/FurqanAnwar/Typing-Simulator/blob/main/CONTRIBUTING.md)
