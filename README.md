@@ -1,5 +1,10 @@
-# Typing-Simulator
-### Overview
+# Typing-Simulator [![Typing](https://img.shields.io/badge/%F0%9F%92%AC-Typing%20Simulator-orange)](https://github.com/FurqanAnwar/Typing-Simulator)
+
+
+<h2 align="center"><img src="https://user-images.githubusercontent.com/37766405/135808975-44151faf-4e90-4ffe-9b70-b747250dcad1.PNG"  /></h2>
+
+
+# Overview
 Typing Simulator is a front end project which allows user to do typing. This is version 1 of typing simulator which is still in development process.
 # Instructions !
 ### General
