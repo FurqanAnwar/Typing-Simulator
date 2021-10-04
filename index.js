@@ -10,7 +10,7 @@ let currentSpan = 0;
 let index = 0;
 let length;
 let removedNodes = [];
-
+let count=0;
 
 
 window.onload = () => {
@@ -109,12 +109,16 @@ wrapper.addEventListener("keydown", (event) => {
     spanList[currentSpan].classList.remove("cursor");
     spanList[currentSpan].classList.add("shake");
     spanList[currentSpan].classList.add("is-wrong");
+    count++;
+    alert("wrong count:"+count);
 
     // Remove animation class after .8 sec delay
     setTimeout(() => {
       spanList[currentSpan].classList.remove("shake");
       spanList[currentSpan].classList.remove("is-wrong");
       spanList[currentSpan].classList.add("cursor");
+      count++;
+      alert("Timeout");
     }, 800)
    
   }
