@@ -1,6 +1,11 @@
-# Typing-Simulator
-### Overview
-Typing Simulator is a front end project which allows user to do typing but there is a catch, user can not type fast enough as there will be a delay of 0.8 sec every time user pushes the right word using space bar. 
+
+# Typing-Simulator [![Typing](https://img.shields.io/badge/%F0%9F%92%AC-Typing%20Simulator-orange)](https://github.com/FurqanAnwar/Typing-Simulator)
+
+<h2 align="center"><img src="https://user-images.githubusercontent.com/37766405/135808975-44151faf-4e90-4ffe-9b70-b747250dcad1.PNG"  /></h2>
+
+# Overview
+Typing Simulator is a front end project which allows user to do typing. This is version 1 of typing simulator which is still in development process.
+
 # Instructions !
 ### General
 >Typing Simulator is not like other typing testers where you can write words more speedly, Typing Simulator uses pop up animation ( created by me ) which takes 0.8 sec to complete its animation, so cursor will be gone for that .8s which means user can't type as soon as he pop up the word from the stack. 
@@ -31,3 +36,6 @@ yarn install
 yarn start (For live-server to run)
 yarn compile:sass (For compiling sass code into css file)
 ~~~
+
+# Want to contribute :question:
+For more information visit [CONTRIBUTION.md](https://github.com/FurqanAnwar/Typing-Simulator/blob/main/CONTRIBUTING.md)
