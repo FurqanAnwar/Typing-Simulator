@@ -55,8 +55,25 @@ wrapper.addEventListener("keydown", (event) => {
       spanList[currentSpan].classList.add("cursor");
     }
     return;
-  }
+  } else {
+    if (event.target != undefined && spanList[currentSpan].textContent !== event.key) {
+      if (!pushWord){
+        spanList[currentSpan].classList.remove("cursor");
+        spanList[currentSpan].classList.add("shake");
+        spanList[currentSpan].classList.add("is-wrong");
 
+        // Remove animation class after .8 sec delay
+        setTimeout(() => {
+          spanList[currentSpan].classList.remove("shake");
+          spanList[currentSpan].classList.remove("is-wrong");
+          spanList[currentSpan].classList.add("cursor");
+        }, 800);
+      } else {
+        spanList[currentSpan].classList.remove("cursor");
+        spanList[currentSpan].classList.add("newCursor");
+      }
+    }
+  }
   if( (event.which === 32  || event.keyCode === 32) && pushWord){
 
       //if true than push the whole span out using animation
@@ -81,20 +98,6 @@ wrapper.addEventListener("keydown", (event) => {
         }
       },800);
     return;
-  }
-  
-  
-  if (spanList[currentSpan].textContent !== event.key) {
-    spanList[currentSpan].classList.remove("cursor");
-    spanList[currentSpan].classList.add("shake");
-    spanList[currentSpan].classList.add("is-wrong");
-
-    // Remove animation class after .8 sec delay
-    setTimeout(() => {
-      spanList[currentSpan].classList.remove("shake");
-      spanList[currentSpan].classList.remove("is-wrong");
-      spanList[currentSpan].classList.add("cursor");
-    }, 800);
   }
 });
 
