@@ -12,10 +12,10 @@ body {
   box-sizing: border-box;
   position: relative;
   height: 100vh;
-  background-color: #f6f6f7;
-  font-size: 2rem;
+  background-color: rgba(53,49,49);
+  font-size: 4rem;
   font-family: "Roboto Mono", monospace;
-  color: black; }
+  color: rgb(168,236,236); }
 
 .bounce-it {
   position: absolute;
@@ -23,12 +23,12 @@ body {
   animation: bounce 0.9s ease-in-out forwards; }
 
 .container {
-  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.12), 0 9px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 9px 24px rgba(140, 212, 206, 0.12), 0 9px 24px rgba(139, 229, 241, 0.12);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fefefe; }
+  background-color: rgb(47,44,44); }
 
 .wrapper {
   height: 5.2rem;
