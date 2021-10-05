@@ -83,9 +83,29 @@ wrapper.addEventListener("keydown", (event) => {
     return;
   }
   
-  
+  if (spanList[currentSpan].textContent !== event.key && pushWord) {
+
+    removeCursorAndAnimateLetter(spanList[currentSpan], "newCursor");
+    // return so that code does not go to the next if 
+    return;
+  }
+
   if (spanList[currentSpan].textContent !== event.key) {
-    spanList[currentSpan].classList.remove("cursor");
+
+    removeCursorAndAnimateLetter(spanList[currentSpan],"cursor");
+    return;
+  }
+});
+
+const removeCursorAndAnimateLetter = (letterToAnimate, cursor) => {
+/* 
+1: Cursor is dynamic here it can be newCursor or cursor depending up the
+positon of letter you are at 
+2: if letter is green than there is no need to run wrong letter animation 
+*/
+  if (!letterToAnimate.classList.contains("is-correct")) {
+    
+    spanList[currentSpan].classList.remove(cursor);
     spanList[currentSpan].classList.add("shake");
     spanList[currentSpan].classList.add("is-wrong");
 
@@ -93,10 +113,11 @@ wrapper.addEventListener("keydown", (event) => {
     setTimeout(() => {
       spanList[currentSpan].classList.remove("shake");
       spanList[currentSpan].classList.remove("is-wrong");
-      spanList[currentSpan].classList.add("cursor");
-    }, 800);
+      console.log("adding cursor back", cursor)
+      spanList[currentSpan].classList.add(cursor);
+    }, 800)
   }
-});
+}
 
 const updateElement = (index, currentSpan) =>{
   // Update the spanList
