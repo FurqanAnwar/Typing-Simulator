@@ -71,6 +71,9 @@ body {
 .is-wrong {
   color: red; }
 
+.is-correct {
+  color:rgb(4, 240, 4);}
+
 @keyframes blinking {
   20% {
     opacity: 0.7; }
