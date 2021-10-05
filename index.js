@@ -1,7 +1,6 @@
-
-
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
+
 let textContainerList = wrapper.children;
 let list;
 let newList;
@@ -12,12 +11,9 @@ let length;
 let removedNodes = [];
 let pushWord = false;
 
-
 window.onload = () => {
-  
   wrapper.focus();
   updateElement(index,currentSpan);
- 
 };
 
 
@@ -26,7 +22,7 @@ window.onload = () => {
 document.addEventListener("click", (event) => {
   let  target, classPropsArr;
   target = event.target;
-  
+
   checkPropertyExists = target.attributes.hasOwnProperty("class");
   classPropsArr = ["wrapper", "wrapper__text-container", "text"];
 
@@ -34,81 +30,61 @@ document.addEventListener("click", (event) => {
       // remove focus of the wrapper
       wrapper.blur();
   }
-
 });
 
 // Key down event
 
 wrapper.addEventListener("keydown", (event) => {
- 
-    if(event.target != undefined && spanList[currentSpan].textContent == event.key){
-      spanList[currentSpan].classList.add("is-correct");
-      
-      
-      
-    
+  if(event.target != undefined && spanList[currentSpan].textContent == event.key){
+    spanList[currentSpan].classList.add("is-correct");
+
     if(currentSpan === length){
-     
       // remove the cursor from front of element
       spanList[currentSpan].classList.remove("cursor");
+
       // add the newly cursor after element
       spanList[currentSpan].classList.add("newCursor");
+
       // set pushWord
       pushWord = true;
     }
-  
 
     if(currentSpan < length){
-      
       spanList[currentSpan].classList.remove("cursor");
-      
       ++currentSpan;
-     
       spanList[currentSpan].classList.add("cursor");
-     
-      }
-      return;
     }
+    return;
+  }
 
-    if( (event.which === 32  || event.keyCode === 32) && pushWord){
-     
-        //if true than push the whole span out using animation
+  if( (event.which === 32  || event.keyCode === 32) && pushWord){
+
+      //if true than push the whole span out using animation
+      textContainerList[index].classList.add("bounce-it");
+      spanList[length].classList.remove("newCursor");
       
+    setTimeout(() => {
+      removedNodes[index] = wrapper.removeChild(textContainerList[index]);
+    }, 800);
 
-        textContainerList[index].classList.add("bounce-it");
-
-        spanList[length].classList.remove("newCursor");
-        
+   
       setTimeout(() => {
-          
-          removedNodes[index] = wrapper.removeChild(textContainerList[index]);
-        
-        }, 800);
-  
-     
-        setTimeout(() =>{
-          
-          if (textContainerList.length != 1 && textContainerList[index] != undefined) {
-                 
-            currentSpan = 0;
-            // append new child into wrapper
-            
-            // Update element
-            updateElement(index, currentSpan);
-            // append element
-            let element = appendElement(wrapper);
-                }
-        },800)
-        
-      
-      return
+        if (textContainerList.length != 1 && textContainerList[index] != undefined) {
+          currentSpan = 0;
+
+          // append new child into wrapper
+          // Update element
+          updateElement(index, currentSpan);
+
+          // append element
+          appendElement(wrapper);
+        }
+      },800);
+    return;
   }
   
   
   if (spanList[currentSpan].textContent !== event.key) {
-    
-  
-    
     spanList[currentSpan].classList.remove("cursor");
     spanList[currentSpan].classList.add("shake");
     spanList[currentSpan].classList.add("is-wrong");
@@ -118,15 +94,14 @@ wrapper.addEventListener("keydown", (event) => {
       spanList[currentSpan].classList.remove("shake");
       spanList[currentSpan].classList.remove("is-wrong");
       spanList[currentSpan].classList.add("cursor");
-    }, 800)
-   
+    }, 800);
   }
 });
 
 const updateElement = (index, currentSpan) =>{
   // Update the spanList
   spanList = textContainerList[index].children;
-  
+
   // Update the length variable
   length = spanList.length - 1;
 
@@ -172,11 +147,9 @@ const appendElement = (element) => {
     currentIndex++;
     
   } while (currentIndex < text.length)
-
-
+  
   // Append the div inside given element
   element.appendChild(div);
-  
+
   return div;
- 
 };
