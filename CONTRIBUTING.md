@@ -20,10 +20,23 @@ By adding new code, or making changes to old one
 > git commit -m "Commit message"
 
 ### Step :six: Pusing code to repo :heavy_exclamation_mark:
-1: Checkout the master(main branch) and pull all the changes from original repository(that one you've forked the project from)
+1: Checkout to master(main branch) and pull all the changes from original repository(that one you've forked the project from) to your main branch
 
-2: Once you've pulled the changes, checkout to your development_branch ( The branch you created earlier) and push changes
-  > git push origin "branch_name_you_want_to_push"
+> git checkout remoteName mainBranchName
+
+> git pull remoteName mainBranchName
+
+2: Once you've pulled the changes, checkout to your development_branch ( The branch you created earlier) 
+
+> git checkout remoteName developmentBranchName
+
+And pull changes to your development_branch from your main branch 
+
+> git pull remoteName branchName
+
+And then push changes of development_branch to remote repository
+
+> git push origin "branch_name_you_want_to_push"
 
 ### Step :seven: Create a pull request :chains:
 Go to your forked repo on github, select `Pull Request` and open a new one.
