@@ -174,3 +174,65 @@ const appendElement = (element) => {
 
   return div;
 };
+
+// Timer function for the clock working as a stopwatch.
+
+const timer = document.getElementById("display");
+var hr = 0;
+var min = 0;
+var sec = 0;
+var stoptime = true;
+// function to start time
+function startTimer() {
+  console.log("Started");
+  if (stoptime == true) {
+    stoptime = false;
+    timerCycle();
+  }
+}
+// function to stop/pause the time
+function stopTimer() {
+  console.log("stoped");
+  if (stoptime == false) {
+    stoptime = true;
+  }
+}
+// function to run the cycle of the time
+function timerCycle() {
+  console.log("Running");
+  if (stoptime == false) {
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+    sec = sec + 1;
+    if (sec == 60) {
+      min = min + 1;
+      sec = 0;
+    }
+    if (min == 60) {
+      hr = hr + 1;
+      min = 0;
+      sec = 0;
+    }
+    if (sec < 10 || sec == 0) {
+      sec = "0" + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = "0" + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = "0" + hr;
+    }
+    timer.innerHTML = hr + ":" + min + ":" + sec;
+    setTimeout("timerCycle()", 1000);
+  }
+}
+// function to reset the timer
+function resetTimer() {
+  console.log("Reset");
+  timer.innerHTML = "00:00:00";
+  hr = 0;
+  min = 0;
+  sec = 0;
+  stoptime = true;
+}
