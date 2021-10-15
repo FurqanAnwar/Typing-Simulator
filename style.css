@@ -129,7 +129,8 @@ body {
 .button-container{
   position: relative;
   display: flex;
-  justify-content: space-between;
+ 
+  justify-content: center;
   width: 100%;
   height: 100%;
   top: 1rem;
@@ -137,7 +138,7 @@ body {
 
 button{
   height: 1.5rem;
-  width: 3rem;
+  width: 5rem;
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
@@ -146,6 +147,7 @@ button{
   background-color: rgba(53,49,49);
   border-radius: 15px;
   box-shadow: 0 5px rgb(168,236,236);
+  margin: 10px;
 }
 button:hover{
   background-color: black;
@@ -155,4 +157,6 @@ button:active{
   transform: translateY(4px);
 }
 
-  
+#reset-button{
+  margin-right: 0px;
+}
