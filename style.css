@@ -12,7 +12,10 @@ body {
   box-sizing: border-box;
   position: relative;
   height: 100vh;
-  background-color: rgba(53,49,49);
+  /* background-color: rgba(53,49,49); */
+  background: url("./bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 4rem;
   font-family: "Roboto Mono", monospace;
   color: rgb(168,236,236); }
@@ -21,6 +24,20 @@ body {
   position: absolute;
   z-index: 999999;
   animation: bounce 0.9s ease-in-out forwards; }
+
+.heading{
+  margin-top: 120px;
+  /* border: solid 2px red; */
+  display: inline-block;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 800;
+  color:#00FF00;
+  text-shadow: 0px 0px  10px #FF0000,
+  0px 0px  20px #FF0000,
+  0px 0px  40px #FF0000,
+  0px 0px  80px #FF0000,
+  0px 0px 120px #FF0000;
+}
 
 .container {
   box-shadow: 0 9px 24px rgba(140, 212, 206, 0.12), 0 9px 24px rgba(139, 229, 241, 0.12);
