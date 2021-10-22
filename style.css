@@ -20,7 +20,6 @@ body {
   background-size: cover;
   font-size: 4rem;
   font-family: "Roboto Mono", monospace;
-  color: rgb(168, 236, 236);
 }
 
 .bounce-it {
@@ -32,9 +31,10 @@ body {
 .heading {
   margin-top: 120px;
   display: inline-block;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 800;
-  color: #CC00FF;
+  color: #000000;
+  letter-spacing: 3px;
 }
 
 .container {
@@ -44,7 +44,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(47, 44, 44);
 }
 
 .wrapper {
