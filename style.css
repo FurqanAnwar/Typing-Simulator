@@ -151,13 +151,15 @@ body {
 /* Clock CSS */
 
 .clock-container {
-  width: 13%;
-  height: 10%;
+  width: 15%;
+  height: 18%;
   align-items: center;
   position: relative;
   top: 3%;
   left: 80%;
   vertical-align: auto;
+  border: 3px solid black;
+  padding: 20px;
 }
 
 .display {
@@ -178,10 +180,12 @@ body {
 }
 
 button {
-  height: 1.5rem;
+  height: 1.8rem;
   width: 5rem;
+  padding: 0px 16px;
   color: #ffffff;
   font-size: 1rem;
+  font-weight: 900;
   cursor: pointer;
   outline: none;
   border: 1px solid black;
