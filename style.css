@@ -151,16 +151,42 @@ body {
 /* Clock CSS */
 
 .clock-container {
-  width: 15%;
+ display: flex;
+ flex-direction: column;
+  width: 20%;
   height: 18%;
   align-items: center;
   position: relative;
   top: 3%;
-  left: 80%;
+  left: 75%;
   vertical-align: auto;
   border: 3px solid black;
   padding: 20px;
+  box-sizing: border-box;
 }
+
+
+
+@media screen and (min-device-width : 801px) and  (max-device-width : 1350px) {
+  .clock-container{
+    width:30%;
+    left: 68%;
+  }
+}
+@media screen and (min-device-width : 560px) and  (max-device-width : 800px) {
+  .clock-container{
+    width:30%;
+    height:12%;
+  }
+ }
+ @media screen and (min-device-width : 0px) and  (max-device-width : 560px) {
+  .clock-container{
+    width:30%;
+    height:9%;
+  }
+ }
+ 
+
 
 .display {
   width: 100%;
