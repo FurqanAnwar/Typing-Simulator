@@ -29,7 +29,7 @@ body {
 }
 
 .heading {
-  margin-top: 120px;
+  /* margin-top: 120px; */
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 800;
@@ -148,6 +148,58 @@ body {
   }
 }
 
+
+
+
+ /* Tooltip container */
+ .tooltip { position: relative;
+  
+  top: 5%;
+  left: 10%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+.inst{
+  color:rgb(168 236 236) ;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  background-color: black;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  top: 100%;
+  left: 50%;
+  margin-left: -130px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+h2{
+  color:rgb(168 236 236);
+}
+
+.instruction{
+  height:20px;
+  width:20px;
+}
+
+.tooltiptext {
+  padding:10px/* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
 /* Clock CSS */
 
 .clock-container {
@@ -157,7 +209,7 @@ body {
   height: 18%;
   align-items: center;
   position: relative;
-  top: 3%;
+  top: -5%;
   left: 75%;
   vertical-align: auto;
   border: 3px solid black;
