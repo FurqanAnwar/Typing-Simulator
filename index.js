@@ -1,6 +1,8 @@
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
 
+let words = ["spell", "spoon", "food", "house", "corner", "working", "boxer"];
+
 let textContainerList = wrapper.children;
 let list;
 let newList;
@@ -15,7 +17,6 @@ window.onload = () => {
   wrapper.focus();
   updateElement(index,currentSpan);
 };
-
 
 
 //click event
@@ -113,9 +114,8 @@ positon of letter you are at
     setTimeout(() => {
       spanList[currentSpan].classList.remove("shake");
       spanList[currentSpan].classList.remove("is-wrong");
-      console.log("adding cursor back", cursor)
       spanList[currentSpan].classList.add(cursor);
-    }, 800)
+    }, 600)
   }
 }
 
@@ -135,8 +135,6 @@ const updateElement = (index, currentSpan) =>{
 
 // I'll refactor this appendElement function later
 const appendElement = (element) => {
-  let currentIndex = 0;
-  
   const textList = [
     "where","fill","close","desert","elite",
     "fanbase","ghost","hilton","injector",
@@ -145,29 +143,22 @@ const appendElement = (element) => {
     "talented","user","visitor","westler",
     "xponent","yes","zoo",
   ];
+  const div = document.createElementWithAttributes("div",
+    {"class":"wrapper__text-container"}
+  );
 
-  const div = document.createElement("div");
-  div.classList.add("wrapper__text-container");
-
-  const text = textList[Math.floor(Math.random() * 25)];
+  const text = textList[Math.floor(Math.random() * textList.length)];
   
-  do {
-    // Generate span nodes based on length of text
-    let span = document.createElement("span");
-
+  for(letter of text){
+    let span = document.createElementWithAttributes("span", 
+      {'class':'text'}
+    );
     // Set the inner content of span to text's content based on index
-    span.textContent = text.charAt(currentIndex);
-
-    // Set text class on span
-    span.classList.add("text");
+    span.textContent = letter
 
     // Append span to div created earlier
     div.appendChild(span)
-  
-    // Increment current index by one
-    currentIndex++;
-    
-  } while (currentIndex < text.length)
+  }
   
   // Append the div inside given element
   element.appendChild(div);
