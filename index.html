@@ -5,115 +5,125 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">  -->
- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>Typing Simulator</title>
   <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
 </head>
 
 <body>
-  <div class="container">
-    <div class="wrapper" tabindex="0">
+  <!-- <h1 class="heading">Typing Simulator</h1> -->
+<!-- 
+  <header class="header">
 
-      <div class="wrapper__text-container">
-        <span class="text">h</span>
-        <span class="text">e</span>
-        <span class="text">l</span>
-        <span class="text">l</span>
+    <div class="tooltip"><img id ="instruction" src="instruction.png" alt=""/>
+      <span class="tooltiptext"><center><h2>Instructions</h2></center> <br><hr>
+       <b><p class="inst"> General:</p></b>
+        Typing Simulator is not like other typing testers where you can write words more speedly, Typing Simulator uses pop up animation ( created by me ) which takes 0.8 sec to complete its animation, so cursor will be gone for that .8s which means user can't type as soon as he pop up the word from the stack.
+        <br><br>
+        <b><p class="inst">For Focus dizzy :</p></b>
+        By default focus will be on the container having words in it, when ever user click any where else on the screen the focus is lost (unset by default), so in order to regain focus click any where near text and start typing.
+        <br><br>
+        <b><p class="inst">
+        For Typing speech_balloon:</p></b>
+        Start typing and when you are about to complete the word hit spacebar to pop that word out ( word will pop out using some specified animation).
+         If you don't hit space bar when you reach the end of a word nothing will happen, so inorder to move to the next word you need to hit spacebar.<br>  <br></span>
+  </div>
+  
+    
+  
+    <div class="clock-container">
+      <div id="display" class="display">00:00:00</div>
+      <div class="button-container">
+        <button onclick="startTimer()" class="buttons" id="start-button">Start</button>
+        <button onclick="stopTimer()" class="buttons" id="stop-button">Stop</button>
+        <button onclick="resetTimer()" class="buttons" id="reset-button">Reset</button>
       </div>
-
-      <div class="wrapper__text-container">
-        <span class="text">s</span>
-        <span class="text">p</span>
-        <span class="text">e</span>
-        <span class="text">l</span>
-      </div>
-        
+    </div>
+  
+  </header>
+-->
+  <main class="main">
+    <div class="word_container" ></div>
+    <div class="container">
+      <div class="wrapper" tabindex="0">
+  
+        <div class="wrapper__text-container">
+          <span class="text">h</span>
+          <span class="text">e</span>
+          <span class="text">l</span>
+          <span class="text">l</span>
+        </div>
+  
         <div class="wrapper__text-container">
           <span class="text">s</span>
           <span class="text">p</span>
-          <span class="text">o</span>
-          <span class="text">o</span>
-          <span class="text">n</span>
+          <span class="text">e</span>
+          <span class="text">l</span>
         </div>
-
+          
           <div class="wrapper__text-container">
-            <span class="text">f</span>
-            <span class="text">o</span>
-            <span class="text">o</span>
-            <span class="text">d</span>
-          </div>
-
-          <div class="wrapper__text-container">
-            <span class="text">h</span>
-            <span class="text">o</span>
-            <span class="text">u</span>
             <span class="text">s</span>
-            <span class="text">e</span>
-          </div>
-
-          <div class="wrapper__text-container">
-            <span class="text">c</span>
+            <span class="text">p</span>
             <span class="text">o</span>
-            <span class="text">r</span>
+            <span class="text">o</span>
             <span class="text">n</span>
-            <span class="text">e</span>
-            <span class="text">r</span>
           </div>
-
-          <div class="wrapper__text-container">
-            <span class="text">w</span>
-            <span class="text">o</span>
-            <span class="text">r</span>
-            <span class="text">k</span>
-            <span class="text">i</span>
-            <span class="text">n</span>
-            <span class="text">g</span>
-          </div>
-
-          <div class="wrapper__text-container">
-            <span class="text">b</span>
-            <span class="text">o</span>
-            <span class="text">x</span>
-            <span class="text">e</span>
-            <span class="text">r</span>
-          </div>
-      
-    </div>
-
-  </div>
   
- 
-  <!--Instructions -->
-  <div class="tooltip"><img id ="instruction" src="instruction.png" alt=""/>
-    <span class="tooltiptext"><center><h2>Instructions</h2></center> <br><hr>
-     <b><p class="inst"> General:</p></b>
-      Typing Simulator is not like other typing testers where you can write words more speedly, Typing Simulator uses pop up animation ( created by me ) which takes 0.8 sec to complete its animation, so cursor will be gone for that .8s which means user can't type as soon as he pop up the word from the stack.
-      <br><br>
-      <b><p class="inst">For Focus dizzy :</p></b>
-      By default focus will be on the container having words in it, when ever user click any where else on the screen the focus is lost (unset by default), so in order to regain focus click any where near text and start typing.
-      <br><br>
-      <b><p class="inst">
-      For Typing speech_balloon:</p></b>
-      Start typing and when you are about to complete the word hit spacebar to pop that word out ( word will pop out using some specified animation).
-       If you don't hit space bar when you reach the end of a word nothing will happen, so inorder to move to the next word you need to hit spacebar.<br>  <br></span>
-</div>
-
-  <div class="clock-container">
-    <div id="display" class="display">00:00:00</div>
-    <div class="button-container">
-      <button onclick="startTimer()" class="buttons" id="start-button">Start</button>
-      <button onclick="stopTimer()" class="buttons" id="stop-button">Stop</button>
-      <button onclick="resetTimer()" class="buttons" id="reset-button">Reset</button>
+            <div class="wrapper__text-container">
+              <span class="text">f</span>
+              <span class="text">o</span>
+              <span class="text">o</span>
+              <span class="text">d</span>
+            </div>
+  
+            <div class="wrapper__text-container">
+              <span class="text">h</span>
+              <span class="text">o</span>
+              <span class="text">u</span>
+              <span class="text">s</span>
+              <span class="text">e</span>
+            </div>
+  
+            <div class="wrapper__text-container">
+              <span class="text">c</span>
+              <span class="text">o</span>
+              <span class="text">r</span>
+              <span class="text">n</span>
+              <span class="text">e</span>
+              <span class="text">r</span>
+            </div>
+  
+            <div class="wrapper__text-container">
+              <span class="text">w</span>
+              <span class="text">o</span>
+              <span class="text">r</span>
+              <span class="text">k</span>
+              <span class="text">i</span>
+              <span class="text">n</span>
+              <span class="text">g</span>
+            </div>
+  
+            <div class="wrapper__text-container">
+              <span class="text">b</span>
+              <span class="text">o</span>
+              <span class="text">x</span>
+              <span class="text">e</span>
+              <span class="text">r</span>
+            </div>
+        
+      </div>
+  
     </div>
-  </div>
+    
+    
+  
+    </div>
+  </main>
+  
+  
 
-<center> 
-  <div class="heading">Typing Simulator</div>
-</center>
 
   <script src="index.js"></script>
 

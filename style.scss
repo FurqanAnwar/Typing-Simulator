@@ -23,6 +23,7 @@ body {
   font-size: 2rem;
   font-family: "Roboto Mono", monospace;
   color: rgb(0, 0, 0);
+  overflow:hidden;
 }
 
 .bounce-it {
@@ -30,20 +31,33 @@ body {
   z-index: 999999;
   animation: bounce 0.9s ease-in-out forwards;
 }
-
+.makeItDisapper{
+  display:none;
+}
+.wrapper,
+.word_container{
+  width: 35rem;
+  height: 5.2rem;
+}
 .container {
   box-shadow: 0 9px 24px rgba(0, 0, 0, 0.12), 0 9px 24px rgba(0, 0, 0, 0.12);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fefefe;
-  
-  
 }
+.word_container{
+  position:absolute;
+  left:25%;
+  margin: 0 1rem 0 0 ;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .wrapper {
-  height: 5.2rem;
-  width: 35rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;

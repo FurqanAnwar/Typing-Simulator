@@ -1,39 +1,38 @@
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
+const wordContainer = document.querySelector(".word_container");
 
 let textContainerList = wrapper.children;
 let list;
 let newList;
 let spanList;
 let currentSpan = 0;
-let index = 0;
+let currentTextContainer = 0;
 let length;
 let removedNodes = [];
 let pushWord = false;
 
 window.onload = () => {
   wrapper.focus();
-  updateElement(index,currentSpan);
+  updateElement(currentTextContainer,currentSpan);
 };
-
-
 
 //click event
 document.addEventListener("click", (event) => {
   let  target, classPropsArr;
+  let indexForClassName = 0;
   target = event.target;
 
-  checkPropertyExists = target.attributes.hasOwnProperty("class");
+  hasClassAttribute = target.attributes.hasOwnProperty("class");
   classPropsArr = ["wrapper", "wrapper__text-container", "text"];
-
-  if (checkPropertyExists && !classPropsArr.includes(target.classList[0])) {
-      // remove focus of the wrapper
-      wrapper.blur();
+  
+  if (hasClassAttribute && !classPropsArr.includes(target.classList[indexForClassName])) {
+    // remove focus of the wrapper
+    wrapper.blur();
   }
 });
 
 // Key down event
-
 wrapper.addEventListener("keydown", (event) => {
   if(event.target != undefined && spanList[currentSpan].textContent == event.key){
     spanList[currentSpan].classList.add("is-correct");
@@ -59,27 +58,32 @@ wrapper.addEventListener("keydown", (event) => {
 
   if( (event.which === 32  || event.keyCode === 32) && pushWord){
 
-      //if true than push the whole span out using animation
-      textContainerList[index].classList.add("bounce-it");
-      spanList[length].classList.remove("newCursor");
+    wordContainer.appendChild(textContainerList[currentTextContainer]);
+    
+    for(const child of wordContainer.children){
+      child.classList.add("bounce-it")
+    }
       
     setTimeout(() => {
-      removedNodes[index] = wrapper.removeChild(textContainerList[index]);
-    }, 800);
+      //Remove all nodes having bounce animation
+      for(const child of wordContainer.children){
+        if(child.classList.contains("bounce-it")){
+          child.classList.remove("bounce-it");
+          removedNodes[currentTextContainer] = wordContainer.removeChild(child);
+        }
+      } 
+    }, 1000);
 
    
-      setTimeout(() => {
-        if (textContainerList.length != 1 && textContainerList[index] != undefined) {
-          currentSpan = 0;
+    if (textContainerList.length != 1 && textContainerList[currentTextContainer] != undefined) {
+      currentSpan = 0;
 
-          // append new child into wrapper
-          // Update element
-          updateElement(index, currentSpan);
+      // Update element i.e cursor position, currentTextContainer value
+      updateElement(currentTextContainer, currentSpan);
 
-          // append element
-          appendElement(wrapper);
-        }
-      },800);
+      // Add new text_container to wrapper
+      appendElement(wrapper);
+    }
     return;
   }
   
@@ -113,7 +117,6 @@ positon of letter you are at
     setTimeout(() => {
       spanList[currentSpan].classList.remove("shake");
       spanList[currentSpan].classList.remove("is-wrong");
-      console.log("adding cursor back", cursor)
       spanList[currentSpan].classList.add(cursor);
     }, 800)
   }
@@ -175,8 +178,11 @@ const appendElement = (element) => {
   return div;
 };
 
-// Timer function for the clock working as a stopwatch.
 
+
+/** Will deal with it later  **/
+// Timer function for the clock working as a stopwatch.
+/** 
 const timer = document.getElementById("display");
 var hr = 0;
 var min = 0;
@@ -184,7 +190,6 @@ var sec = 0;
 var stoptime = true;
 // function to start time
 function startTimer() {
-  console.log("Started");
   if (stoptime == true) {
     stoptime = false;
     timerCycle();
@@ -192,14 +197,12 @@ function startTimer() {
 }
 // function to stop/pause the time
 function stopTimer() {
-  console.log("stoped");
   if (stoptime == false) {
     stoptime = true;
   }
 }
 // function to run the cycle of the time
 function timerCycle() {
-  console.log("Running");
   if (stoptime == false) {
     sec = parseInt(sec);
     min = parseInt(min);
@@ -229,10 +232,10 @@ function timerCycle() {
 }
 // function to reset the timer
 function resetTimer() {
-  console.log("Reset");
   timer.innerHTML = "00:00:00";
   hr = 0;
   min = 0;
   sec = 0;
   stoptime = true;
 }
+*/

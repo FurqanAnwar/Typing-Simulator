@@ -1,4 +1,3 @@
-
 {
   "name": "Typing_Test",
   "version": "1",
@@ -11,7 +10,9 @@
     "compile:sass": "node-sass ./style.scss  ./style.css -w"
   },
   "devDependencies": {
-    "live-server": "^1.2.1",
-    "node-sass": "^5.0.0"
+    "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1"
   }
 }
