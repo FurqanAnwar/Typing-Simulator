@@ -57,7 +57,8 @@ wrapper.addEventListener("keydown", (event) => {
   }
 
   if( (event.which === 32  || event.keyCode === 32) && pushWord){
-
+    //Remove newCursor befoer pushing the word
+    spanList[currentSpan].classList.remove("newCursor")
     wordContainer.appendChild(textContainerList[currentTextContainer]);
     
     for(const child of wordContainer.children){
