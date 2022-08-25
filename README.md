@@ -19,7 +19,7 @@ Typing Simulator is a front end project which allows user to do typing, but ther
 >Start typing and when you are about to complete the word hit spacebar to pop that word out ( word will pop out using some specified animation). If you don't hit space bar when you reach the end of a word nothing will happen, so inorder to move to the next word you need to hit spacebar
 This project is still in progress and will be completed soon!. 
 # Live Preview (Till Now)
->http://furqananwar.me/Typing-Simulator/
+>https://typing-simulator-eta.vercel.app/
 
 # Getting Started
 1. Clone the project
