@@ -98,9 +98,8 @@ body {
   opacity: 1;
 }
 .cursor::before {
-  left: 0;
+  left: -2px;
 }
-
 .newCursor::after{
   
   right: 0;
