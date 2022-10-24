@@ -9,7 +9,7 @@ Typing Simulator is a front end project which allows user to do typing, but ther
 
 # Instructions !
 ### General
->Typing Simulator is not like other typing testers where you can write words more speedly, Typing Simulator uses pop up animation ( created by me ) which takes 0.8 sec to complete its animation, so cursor will be gone for that .8s which means user can't type as soon as he pop up the word from the stack. 
+>Typing Simulator is not like other typing testers as it introduces pop up animation which pushes the word out of the container when a user successfully completes a word and hit spacebar to move on to the next word. 
 
 
 ### For Focus 💫
