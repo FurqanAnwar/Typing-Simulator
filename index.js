@@ -1,3 +1,4 @@
+// import {hasSpecifiedClasses} from "./utils/hasSpecifiedClasses.js";
 const body = document.getElementsByTagName("body")[0];
 const wrapper = document.querySelector(".wrapper");
 const wordContainer = document.querySelector(".word_container");
@@ -11,7 +12,7 @@ let currentTextContainer = 0;
 let length;
 let removedNodes = [];
 let pushWord = false;
-
+let wrongAnimation;
 window.onload = () => {
   wrapper.focus();
   updateElement(currentTextContainer,currentSpan);
@@ -35,6 +36,15 @@ document.addEventListener("click", (event) => {
 // Key down event
 wrapper.addEventListener("keydown", (event) => {
   if(event.target != undefined && spanList[currentSpan].textContent == event.key){
+    
+    if(spanList[currentSpan].classList.contains("is-wrong")
+                            && 
+       spanList[currentSpan].classList.contains("shake"))
+
+    {spanList[currentSpan].classList.remove("is-wrong","shake");
+     clearTimeout(wrongAnimation)  
+    }
+
     spanList[currentSpan].classList.add("is-correct");
 
     if(currentSpan === length){
@@ -49,6 +59,7 @@ wrapper.addEventListener("keydown", (event) => {
     }
 
     if(currentSpan < length){
+      //Check if current letter was spelled wrong before 
       spanList[currentSpan].classList.remove("cursor");
       ++currentSpan;
       spanList[currentSpan].classList.add("cursor");
@@ -115,7 +126,7 @@ positon of letter you are at
     spanList[currentSpan].classList.add("is-wrong");
 
     // Remove animation class after .8 sec delay
-    setTimeout(() => {
+    wrongAnimation = setTimeout(() => {
       spanList[currentSpan].classList.remove("shake");
       spanList[currentSpan].classList.remove("is-wrong");
       spanList[currentSpan].classList.add(cursor);
